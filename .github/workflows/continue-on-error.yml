@@ -4,6 +4,6 @@ jobs:
   failure:
     runs-on: ubuntu-latest
     steps:
-      - runs: exit 1
+      - run: exit 1
         continue-on-error: true
       - run: echo "Success"
