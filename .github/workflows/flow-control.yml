@@ -1,0 +1,11 @@
+name: Flow control
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit "$(( RANDOM % 2 ))"
+      - id: error
+        run: exit 1
+      - if: ${{ failure() && steps.error.outcome == 'failure' }}
+        run: echo "Catch error step"
