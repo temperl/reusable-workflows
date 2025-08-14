@@ -5,6 +5,6 @@ env:
 jobs:
   sleeps:
     runs-on: ubuntu-latest
-    step:
+    steps:
       - run: sleep 120
         timeout-minutes: ${{ fromJSON(env.TIMEOUT) }}
